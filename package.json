@@ -1,0 +1,43 @@
+{
+  "name": "vinted-mcp-server",
+  "version": "1.0.1",
+  "description": "MCP Server for Vinted marketplace — search items, compare prices, analyze sellers across 19 countries. Works with Claude Desktop, Cursor, and any MCP client.",
+  "main": "dist/bundle.js",
+  "bin": {
+    "vinted-mcp-server": "./dist/bundle.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "bundle": "esbuild src/bin/cli.ts --bundle --platform=node --target=node18 --outfile=dist/bundle.js --format=cjs --external:@modelcontextprotocol/sdk --external:playwright --external:playwright-core --external:playwright-extra --external:puppeteer-extra-plugin-stealth --external:got-scraping --external:undici",
+    "clean": "rm -rf dist",
+    "start": "node dist/bundle.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "keywords": [
+    "vinted",
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "cursor",
+    "ai",
+    "scraper",
+    "marketplace",
+    "fashion",
+    "price-comparison",
+    "second-hand",
+    "mcp-server",
+    "ai-tools",
+    "shopping-assistant"
+  ],
+  "license": "MIT",
+  "author": "KazKN",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist/bundle.js",
+    "README.md"
+  ]
+}
